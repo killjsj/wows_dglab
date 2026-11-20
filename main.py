@@ -284,6 +284,8 @@ if __name__ == "__main__":
             exit(1)
         VersionCode:str = "0"
         for n in os.listdir(WOWS_PATH + "bin\\"):
+            if not n.isdigit():
+                continue
             if int(n) > int(VersionCode):
                 VersionCode = n
         print(f"[配置] 自动检测到版本号: {VersionCode}")
